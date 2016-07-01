@@ -18,6 +18,9 @@
 		      <br>
 		      <%= link_to 'プロフィールを変更する', edit_user_registration_path %> |
 		      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+		      <%= link_to 'マイページ',users_show_path(current_user)%>
+
+
 		    <% else %>
 		      <%= link_to "サインアップ", new_user_registration_path %> |
 		      <%= link_to "ログイン", new_user_session_path %>

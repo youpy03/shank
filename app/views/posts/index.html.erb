@@ -15,15 +15,15 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
+        <td><%= link_to post.title , post_path(post)%></td>
         <td><%= post.body %></td>
-        <td><%= link_to '詳細', post %></td>
+        <!-- <td><%= link_to '詳細', post %></td>
         <td><%= link_to '編集', edit_post_path(post) %></td>
         <td><%= link_to '削除', post, method: :delete, data: { confirm: 'この投稿を削除してもいいですか??' } %>
-        </td>
+        </td>  # 削除の代わりに追加をする -->
       </tr>
     <% end %>
-    <tr>#タスク編集画面(edit)の完成をすること</tr>
+    <p>#タスク編集画面(edit)の完成をすること done!!!</p>
     <tr>#タスクfav れるようにすること</tr>
     <tr>#デザインコンセプトを考えてくること</tr>
     <p>Q.ランキング機能に関してどのように作成したら良いのか??</p>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to '新規投稿', new_post_path %>
+<%= link_to '[新規投稿をする]', new_post_path %>

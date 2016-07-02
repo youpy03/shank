@@ -3,8 +3,16 @@ Rails.application.routes.draw do
   get 'users/show'
 
   devise_for :users
-  resources :posts
+
+  resources :users, only:[:index, :show] do
+    get:likes, on: :member
+  end
+
+  resources :posts do
+    resource :likes, only:[:create, :destroy]
+  end
   root 'posts#index'
+
 
     # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

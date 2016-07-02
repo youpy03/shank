@@ -10,10 +10,10 @@
   <strong>内容:</strong>
   <%= @post.body %>
 </p>
-  <%# if current_user.id == @post.user.try(:id) %>
-<%#= link_to 'Edit', edit_post_path(@post) %>
-<%#= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
- <%# end %>
+  <% if current_user.id == @post.user.try(:id) %>
+<%= link_to 'Edit', edit_post_path(@post) %>
+<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+ <% end %>
 <%= link_to 'home画面に戻る', posts_path %>
 <br>
 <%= link_to '投稿を編集', edit_post_path(@post) %>

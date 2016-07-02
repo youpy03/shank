@@ -5,42 +5,15 @@
   <strong>テーマ:</strong>
   <%= @post.title %>
 </p>
+
 <p>
   <strong>内容:</strong>
   <%= @post.body %>
-
-  <strong>コメント</strong>
-  
-  <%#if %>
-  <%#= @comment.body %>
-  <%#= @comment.user_id %>
-  <%#= @comment.post_id %>
-  <%# end %>
-
-  <!-- コメント一覧 -->
-  <% @post.comments.each do |comment| %>
-    <div>
-    	<%= comment.body %>
-    </div>
-    
-  <% end %>
-
-  <%#= form_for([:post, @comment], url: @comment_form_url) do |f| %>
-	  <div class="field"></div>
-	  <%#= f.label :body %><br>
-	  <%#= f.text_area :body %>
-
-	  <div class="actions">
-	    <%#= f.submit %>
-	  </div>
-  <%# end %>
-
-
 </p>
   <% if current_user.id == @post.user.try(:id) %>
-<%= link_to '投稿を編集する', edit_post_path(@post) %>
-<br>
-<%= link_to '投稿を削除する', @post, method: :delete, data: { confirm: '本当に削除してもいいですか?' } %>
+<%= link_to 'Edit', edit_post_path(@post) %>
+<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
  <% end %>
- <br>
 <%= link_to 'home画面に戻る', posts_path %>
+<br>
+<%= link_to '投稿を編集', edit_post_path(@post) %>

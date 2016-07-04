@@ -8,7 +8,8 @@
 <p>
   <strong>内容:</strong>
   <%= @post.body %>
-
+</p>
+<p>
   <strong>コメント</strong>
   
   <%#if %>
@@ -22,9 +23,8 @@
     <div>
     	<%= comment.body %>
     </div>
-    
   <% end %>
-
+</p>
   <%#= form_for([:post, @comment], url: @comment_form_url) do |f| %>
 	  <div class="field"></div>
 	  <%#= f.label :body %><br>

@@ -7,7 +7,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 </head>
-<body>
+  <body>
 	<header>
 		<div class="menu">
 				<ul class="menu1">
@@ -49,11 +49,33 @@
 			</div>
 	</header>
 	<br>
-<div class ="yield">	
-<%= yield %>
-</div>
+	<main>
+	    <div id ="yield-and-sub">	
+			<div class ="yield">	
+				<%= yield %>
+			</div>
+			<div class ="sub-menu">
+				<div class="search">
+				<h2>Search field</h2>
+				<p>#ここに記事の検索のできる機能を追加する</p>
+				</div>
+				<div class="user-rankings">
+				<h2>ユーザー記事ランキング</h2>
+				<p>＃ユーザの閲覧回数が多いものから順に...</p>
+				</div>
+				<div class="tag-lists">
+				<h2>Tag list(カテゴリ別)</h2>
+				<p>#カテゴリ別の記事のみを表示したviewに(user only)</p>
+				</div>
+			</div>
+		</div>
+	</main>
+
 	<footer>
-		<p>@latpulldown</p>
+	<td>このサイトについて<a href="https://github.com/lat-pull-down/TeamLPD">
+			<img src=latpulldown/app/assets/images/gitimage.png" alt= "" height="25" width="25">
+
+				</a></td> | <td>Copyright (C) latpulldown.inc 2016</td>
 	</footer>
-</body>
+  </body>
 </html>

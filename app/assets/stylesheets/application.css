@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 *{
 	margin:0;
 	padding:0;
@@ -20,8 +21,11 @@
 
 
 body{
-	background-color:#F1EDDE;
+	background-color:whitesmoke;
+	padding-right:25px;
+	padding-left:25px;
 }
+
 header{
 	background-color: rgba(34,49,52,0.9);
 }
@@ -51,15 +55,15 @@ header{
 
 .menu ul a{
 	display:block;
-	transition: all 0.8s;
+	transition: all 0.7s;
 }
 
 .menu ul li{
-	transition: all 0.8s;
+	transition: all 0.7s;
 	border-right:1px solid white;
 }
 .menu ul p{
-	transition: all 0.8s;
+	transition: all 0.7s;
 	font-size:15px;
 }
 .menu ul :visited{
@@ -77,8 +81,59 @@ footer{
 	text-align:center;
 	font-size:18px;
 	color:white;
+	float:left;
+
 }
 
 .yield{
-	height:650px;
+	height:100vh;
+	width:80%;
+	float:left;
+	display:block;
 }
+.sub-menu{
+	width:20%;
+	float:left;
+	
+}
+.search{
+	border:solid 7px gray;
+	padding-top:5px;
+	padding-bottom:100px;
+	margin-bottom:10px;
+}
+.search h2{
+	color:black;
+	font-size:18px;
+	border-bottom:solid 3px gray;
+	width:95%;
+
+}
+.user-rankings{
+	border:solid 7px gray;
+	padding-top:5px;
+	padding-bottom:200px;
+	margin-bottom:10px;
+}
+.user-rankings h2{
+	color:black;
+	font-size:18px;
+	border-bottom:solid 3px gray;
+	width:95%;
+}
+.tag-lists{
+	border:solid 7px gray;
+	padding-top:5px;
+	padding-bottom:200px;
+	margin-bottom:10px;
+}
+.tag-lists h2{
+	color:black;
+	font-size:18px;
+	border-bottom:solid 3px gray;
+	width:95%;
+}
+#yield-and-sub{
+	width:100%;
+}
+

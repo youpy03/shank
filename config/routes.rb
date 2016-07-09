@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
+
+  get 'users/index'
+  get 'users/show'
+
   devise_for :users
-  # The priority is based upon order of creation: first created -> highest priority.
+  resources :posts, shallow: true do
+#sなし = index なし
+    resource :comments, only: [:create,:destroy]
+    resource :likes, only:[:create, :destroy]
+  end
+
+  resources :users, only:[:index, :show] do
+    get:likes, on: :member
+  end
+  root 'posts#index'
+    # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

@@ -4,8 +4,7 @@
 <% @posts.each do |post| %>
   <div class = "boxA-1">
   <article class ="gaiyou">
-  <a href ="#">
-    <img src=".jpg" alt = "">
+  <%= link_to image_tag("evernote.png"),  post_path(post) %>
     <h1><%= link_to post.title , post_path(post)%></h1>
     <p><%= post.body %></p>
     <p class="more"><%= link_to '続きを読む...' , post_path(post) %><i class ="fa fa-chevron-right"></i></p>

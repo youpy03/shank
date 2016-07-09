@@ -16,13 +16,14 @@
 .gaiyou:hover{
 	box-shadow:0 0 8px rgba(34,49,52,0.9);
 	background-color:rgba(51,186,210,0.3);
+	opacity: 0.8;
 
 }
 
 
 
 .gaiyou img{
-	max-width:100%;
+	max-width:110%;
 	height: auto;
 	border:none;
 	margin-bottom:15px;
@@ -52,7 +53,7 @@ text-overflow: clip;
 
 .like{
 	text-align:right;
-}
+}		
 
 /*##########600px~767px##########*/
 @media (min-width:600px){
@@ -66,7 +67,7 @@ text-overflow: clip;
 
 	.boxA-1{
 		float:left;
-		width:50%;
+		width:33%;
 
 	}
 

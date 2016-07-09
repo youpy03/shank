@@ -4,10 +4,10 @@ class CommentsController < ApplicationController
   	@comment = Comment.new(comment_params)
   	@comment.user_id = current_user.id
     @comment.post_id = @post.id
-    @comment_form_url = post_comments_path(params[:id])
+    # @comment_form_url = post_comments_path(params[:id])
   	  respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'コメントしました' }
+        format.html { redirect_to @post, notice: 'コメントしました' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -17,6 +17,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to :back, notice: 'コメントを削除しました'
   end
 
 

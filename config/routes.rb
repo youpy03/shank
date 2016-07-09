@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   devise_for :users
   resources :posts, shallow: true do
 #sなし = index なし
-    resource :comments, only: [:create,:destroy]
+
     resource :likes, only:[:create, :destroy]
   end
-
+# resource :comments, only: [:create,:destroy]
+  post 'comments/:post_id' => 'comments#create', as: :comment
+  delete 'comments/:id' => 'comments#destroy', as: :destroy_comment
   resources :users, only:[:index, :show] do
     get:likes, on: :member
   end

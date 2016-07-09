@@ -12,28 +12,30 @@
 <p>
   <strong>コメント</strong>
   
-  <%#if %>
-  <%#= @comment.body %>
-  <%#= @comment.user_id %>
-  <%#= @comment.post_id %>
-  <%# end %>
+  <%if %>
+  <%= @comment.body %>
+  <%= @comment.user_id %>
+  <%= @comment.post_id %>
+  <% end %>
 
   <!-- コメント一覧 -->
   <% @post.comments.each do |comment| %>
     <div>
     	<%= comment.body %>
+      <p><%= link_to 'Delete', destroy_comment_path(comment), method: :delete %></p>
     </div>
   <% end %>
 </p>
-  <%#= form_for([:post, @comment], url: @comment_form_url) do |f| %>
+  <%= form_for(@comment, url: comment_path(@post)) do |f| %>  
 	  <div class="field"></div>
-	  <%#= f.label :body %><br>
-	  <%#= f.text_area :body %>
+	  <%= f.label :body %><br>
+	  <%= f.text_area :body %>
 
 	  <div class="actions">
-	    <%#= f.submit %>
+	    <%= f.submit %>
+
 	  </div>
-  <%# end %>
+  <% end %>
 
 
 </p>

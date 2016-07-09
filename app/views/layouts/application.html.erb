@@ -56,8 +56,12 @@
 			</div>
 			<div class ="sub-menu">
 				<div class="search">
-				<h2>Search field</h2>
-				<p>#ここに記事の検索のできる機能を追加する</p>
+				<h2>Search field</h2>			
+					<%= search_form_for @q do |f| %>
+
+						<%= f.search_field :title_or_body_cont %>
+						<%= f.submit %>
+					<% end %>
 				</div>
 				<div class="user-rankings">
 				<h2>ユーザー記事ランキング</h2>

@@ -1,0 +1,45 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>テーマ:</strong>
+  <%= @post.title %>
+</p>
+<p>
+  <strong>内容:</strong>
+  <%= @post.body %>
+</p>
+<p>
+  <strong>コメント</strong>
+  
+  <%#if %>
+  <%#= @comment.body %>
+  <%#= @comment.user_id %>
+  <%#= @comment.post_id %>
+  <%# end %>
+
+  <!-- コメント一覧 -->
+  <% @post.comments.each do |comment| %>
+    <div>
+    	<%= comment.body %>
+    </div>
+  <% end %>
+</p>
+  <%#= form_for([:post, @comment], url: @comment_form_url) do |f| %>
+	  <div class="field"></div>
+	  <%#= f.label :body %><br>
+	  <%#= f.text_area :body %>
+
+	  <div class="actions">
+	    <%#= f.submit %>
+	  </div>
+  <%# end %>
+
+
+</p>
+  <% if current_user.id == @post.user.try(:id) %>
+<%= link_to '投稿を編集する', edit_post_path(@post) %>
+<br>
+<%= link_to '投稿を削除する', @post, method: :delete, data: { confirm: '本当に削除してもいいですか?' } %>
+ <% end %>
+ <br>

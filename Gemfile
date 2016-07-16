@@ -35,6 +35,25 @@ gem 'ransack'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'carrierwave'
+gem 'rmagick'
+#アイキャッチ画像を投稿できるようにするやつ
+
+gem 'kaminari'
+#長い文章を複数のページに分割し、各ページへのリンクを並べて
+#アクセスしやすくする機能をページネーション機能
+
+gem 'jquery-turbolinks'
+#jquery 用のやつを入れてみようとしたが入らなかった
+
+gem 'masonry-rails'
+
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'settingslogic'
+#twitter ログイン
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

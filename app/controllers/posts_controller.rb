@@ -8,9 +8,9 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-
-    @q        = Post.search(params[:q])
+    @q  = Post.search(params[:q])
     @posts = @q.result(distinct: true)
+    @posts = Post.page(params[:page]).per(6)
 
 
   end
@@ -78,13 +78,14 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :user_id, :category_id)
+      params.require(:post).permit(:title, :body, :user_id, :category_id, :image)
     end
 
      def correct_user
       post = Post.find(params[:id])
       if current_user.id != post.user.id
-        #なんかこのへんが間違っているらしい
+        #これで、URLの直接入力による他人の編集ページへの
+        #アクセスを制限できるようになりました
       redirect_to root_path
       #最終的に indexに戻すこと
       end

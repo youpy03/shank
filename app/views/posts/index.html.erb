@@ -4,7 +4,15 @@
 <% @posts.each do |post| %>
   <div class = "boxA-1">
   <article class ="gaiyou">
-  <%= link_to image_tag("evernote.png"),  post_path(post) %>
+  <%= link_to image_tag("shank.png"),  post_path(post) %>
+
+    <% if post.image? %>
+    <td><%=  image_tag post.image.url%></td>
+    <% else %>
+    <td><%= image_tag 'noimage.gif' %></td>
+    <% end %>
+
+
     <h1><%= link_to post.title , post_path(post)%></h1>
     <p><%= post.body %></p>
     <p class="more"><%= link_to '続きを読む...' , post_path(post) %><i class ="fa fa-chevron-right"></i></p>
@@ -18,7 +26,10 @@
   </div>
 
 <% end %>
-
+    <div class = "paginate">
+    <%= paginate @posts %>
+    <!-- #ページング機能の追加 -->
+    </div>
 
 </body>
 

@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 	<meta charset="utf-8">
-	<title>Latpulldown</title>
+	<title>Melodic</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -49,6 +50,19 @@
 			</div>
 	</header>
 	<br>
+	<div class = "slide">
+		<ul class = "container">
+			<li class = "current"><%= image_tag("slide-01.jpg") %></li>
+			<li><%= image_tag("slide-02.jpg") %></li>
+			<li><a href ="#"><%= image_tag("slide-03.jpg") %></a></li>
+		</ul>
+		<a href ="#" class ="prev">前の画像</a>
+		<a href ="#" class ="next">次の画像</a>
+	</div>
+
+
+
+
 	<main>
 	    <div id ="yield-and-sub">	
 			<div class ="yield">	
@@ -80,7 +94,7 @@
 			
 			<%= image_tag("gitimage.png", :size => "25x25") %>
 
-				</a></td> | <td>Copyright (C) latpulldown.inc 2016</td>
+				</a></td> | <td>Copyright (C) melodic.inc 2016</td>
 	</footer>
   </body>
 </html>

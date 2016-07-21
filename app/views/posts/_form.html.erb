@@ -13,23 +13,30 @@
 
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title,:size=>"60" %>
   </div>
   <div class="field">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body ,:size=>"60x10" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions"><%= f.label :interest_list, "興味・関心（カンマ区切り）" %><br>
+  <%= text_field_tag 'post[interest_list]', @post.interest_list.join(',') %>
   </div>
-<div class="field">
+<!-- <div class="field">
       <%= f.label :userid %><br>
 　    ユーザーID
       <%= f.collection_select :user_id, User.all, :id, :id%>
-    </div>
+    </div> #不要になったので削除
+    -->
+<br>
+<br>
+<br>
+<%= f.label :image ,'画像を添付する', class:'btn' %>
+<%= f.file_field :image %>
+<br>
+<br>
 
-<%= f.label :image %>
-<%= f.file_field :image %> 
 
+ <%= f.submit '確認', class:'btn' %>
 
 <% end %>

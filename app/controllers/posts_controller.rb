@@ -12,7 +12,6 @@ class PostsController < ApplicationController
     @posts = @q.result(distinct: true)
     @posts = Post.page(params[:page]).per(6)
 
-
   end
 
   # GET /posts/1
@@ -78,7 +77,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :user_id, :category_id, :image)
+      params.require(:post).permit(:title, :body, :user_id, :category_id, :image,:interest_list)
     end
 
      def correct_user

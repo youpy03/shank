@@ -52,13 +52,18 @@
 	<br>
 	<div class = "slide">
 		<ul class = "container">
-			<li class = "current"><%= image_tag("slide-01.jpg") %></li>
+			<li class = "current"><%= image_tag("slide-01.jpg") %>
+				
+
+			</li>
 			<li><%= image_tag("slide-02.jpg") %></li>
 			<li><a href ="#"><%= image_tag("slide-03.jpg") %></a></li>
 		</ul>
 		<a href ="#" class ="prev">前の画像</a>
 		<a href ="#" class ="next">次の画像</a>
 	</div>
+	<br>
+	<br>
 
 
 
@@ -73,15 +78,14 @@
 				<h2>Search field</h2>			
 					<%= search_form_for @q do |f| %>
 
-						<%= f.search_field :title_or_body_cont %>
-						<%= f.submit %>
+						<%= f.search_field :title_or_body_cont,:size => 35, :class => "search_field" %>
+						<%= f.submit :class => "btn" %>
 					<% end %>
 				</div>
 				<div class="user-rankings">
 				<h2>ユーザー記事ランキング</h2>
 				<p>＃ユーザの閲覧回数が多いものから順に...</p>
-				</div>
-				<div class="tag-lists">
+				</div>			<div class="tag-lists">
 				<h2>Tag list(カテゴリ別)</h2>
 				<p>#カテゴリ別の記事のみを表示したviewに(user only)</p>
 				</div>

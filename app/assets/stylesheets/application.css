@@ -169,6 +169,8 @@ footer{
 	z-index:1;
 	opacity: 1;
 }
+/*これをすることで1枚目が上になる*/
+
 
 .slide a.prev,
 .slide a.next{
@@ -204,6 +206,24 @@ footer{
 
 .slide a.next:active{
 	background:url("arrow-right.png")50%  50% no-repeat;
+}
+
+/*SEARCHボタン*/
+.search_field{
+	border-radius:5px;
+	height:10%;
+}
+
+.btn{
+	text-align: right;
+	padding:5px 30px 5px 45px;
+	border-radius:5px;
+	background-color:#8ac2d0;
+	background-position: 30px 50%;
+	color:#fff;
+}
+.btn:hover{
+	background-color:#b9d5dc;
 }
 
 

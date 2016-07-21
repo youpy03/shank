@@ -16,7 +16,9 @@
     <h1><%= link_to post.title , post_path(post)%></h1>
     <p><%= post.body %></p>
     <p class="more"><%= link_to '続きを読む...' , post_path(post) %><i class ="fa fa-chevron-right"></i></p>
-    <p class = "like"><% if post.liked_by? current_user %>
+    <p><%= render 'posts/tag_list', tag_list: post.interest_list %></p>
+    <p class = "like">
+    <% if post.liked_by? current_user %>
               <%= link_to "Delete Like", post_likes_path(post), method: :delete %>
             <% else %>
               <%= link_to "Like", post_likes_path(post), method: :post %>

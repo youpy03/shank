@@ -58,6 +58,14 @@ gem 'settingslogic'
 gem 'acts-as-taggable-on'
 #タグのやつ
 
+gem "font-awesome-rails"
+#font-awesomeの実装/アイコン(矢印等)
+
+gem 'pry-rails'
+#binding.pry
+#rails で"binding.pry"でブレークポイントを置くことができる/便利機能が沢山あるらしい
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

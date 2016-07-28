@@ -107,3 +107,77 @@ text-overflow: clip;
 	
 }
 
+
+
+.slide{
+	position:relative;
+	margin: 0 auto;
+	max-width:900px;
+	font-size: 0;
+}
+
+.slide img{
+	max-width:100%;
+}
+
+.slide > .container{
+	position: relative;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+.slide > .container > li{
+	position: absolute;
+	z-index: 0;
+	top:0;
+	left:0;
+	opacity:0;
+	transition: opacity ls linear;
+}
+.slide > .container > li.current{
+	position: relative;
+	z-index:1;
+	opacity: 1;
+}
+/*これをすることで1枚目が上になる*/
+
+
+.slide a.prev,
+.slide a.next{
+	position: absolute;
+	display:block;
+	top:45%;
+	width:40px;
+	height:40px;
+	text-indent: -5000px;
+	z-index: 10;
+
+}
+.slide a.prev{
+	background:url("arrow-left.png") 50%  50% no-repeat;
+	left:0;
+}
+
+.slide a.prev:hover{
+	background:url("arrow-left.png")50%  50% no-repeat;
+}
+
+.slide a.prev:active{
+	background:url("arrow-left.png")50%  50% no-repeat;
+}
+
+.slide a.next{
+	background:url("arrow-right.png") 50%  50% no-repeat;
+	right:0;
+
+}
+
+.slide a.next:hover{
+	background:url("arrow-right.png")50%  50% no-repeat;
+}
+
+.slide a.next:active{
+	background:url("arrow-right.png")50%  50% no-repeat;
+}

@@ -1,6 +1,18 @@
   <p id="notice"><%= notice %></p>
 
 <body>
+  <div class = "slide">
+    <ul class = "container">
+      <li class = "current"><%= image_tag("slide-01.jpg") %>
+      </li>
+      <li><%= image_tag("slide-02.jpg") %></li>
+      <li><a href ="#"><%= image_tag("slide-03.jpg") %></a></li>
+    </ul>
+    <a href ="#" class ="prev">前の画像</a>
+    <a href ="#" class ="next">次の画像</a>
+  </div>
+<br>
+
 <% @posts.each do |post| %>
   <div class = "boxA-1">
   <article class ="gaiyou">

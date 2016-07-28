@@ -4,3 +4,17 @@
 
 	
 
+<!-- ヘルパーメソッド
+
+font-awesome-railsでは、アイコンタグを挿入するヘルパーメソッドが提供されます。iタグを使わずにアイコンを挿入できます。
+提供されるメソッドは「fa_icon, fa_stacked_icon」の2種類です。
+fa-iconの使い方
+ -->	
+<!-- アイコンの挿入 -->
+<%= fa_icon "arrow-left"%>
+<i class="fa fa-twitter fa-4x"></i>
+<br>
+<br>
+<!-- アイコンとテキストの挿入 -->
+<%= fa_icon "twitter", text: "Twitter" %>
+<i class="fa fa-twitter fa-4x">Twitter</i>

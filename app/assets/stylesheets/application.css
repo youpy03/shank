@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 
 *{
@@ -137,7 +138,8 @@ footer{
 }
 
 /*#################以下スライド*/
-.slide{
+
+/*.slide{
 	position:relative;
 	margin: 0 auto;
 	max-width:960px;
@@ -168,10 +170,10 @@ footer{
 	position: relative;
 	z-index:1;
 	opacity: 1;
-}
+}*/
 /*これをすることで1枚目が上になる*/
 
-
+/*
 .slide a.prev,
 .slide a.next{
 	position: absolute;
@@ -207,7 +209,7 @@ footer{
 .slide a.next:active{
 	background:url("arrow-right.png")50%  50% no-repeat;
 }
-
+*/
 /*SEARCHボタン*/
 .search_field{
 	border-radius:5px;
@@ -234,3 +236,4 @@ footer{
 	}
 
 }
+

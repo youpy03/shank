@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'users/show'
 
-  devise_for :users
+  devise_for :users,controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  #devise_forに対して omniauthのcallback設定をする
+
+
   resources :posts, shallow: true do
 #sなし = index なし
 

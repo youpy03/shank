@@ -1,0 +1,102 @@
+
+  <div class="login-box">
+    <div class="lb-header">
+      <a href="#" class="active" id="login-box-link">Login</a>
+      <a href="#" id="signup-box-link">Sign Up</a>
+    </div>
+    <div class="social-login">
+      <a href="<%= user_omniauth_authorize_path(:facebook) %>">
+        <i class="fa fa-facebook fa-lg"></i>
+        Login in with facebook
+      </a>
+      <a href="<%= user_omniauth_authorize_path(:twitter) %>">
+        <i class="fa fa-twitter fa-lg"></i>
+        log in with <br>Twitter
+      </a>
+    </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<!--     (resource, as: resource_name, url: session_path(resource_name))
+ -->      <form class="email-login">
+        <div class="u-form-group">
+           <%= f.email_field :email, autofocus: true %>
+        </div>
+        <div class="u-form-group">
+          <%= f.password_field :password, autocomplete: "off"  %>
+        </div>
+        <div class="u-form-group">
+          <%= f.submit "Login" %>
+        </div>
+        <% if devise_mapping.rememberable? -%>
+             <div class="u-form-group">
+              <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+           </div>
+      <% end %>
+        <div class="u-form-group">
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+      </form>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+    <!-- <form class="email-signup">
+      <div class="u-form-group">
+        <input type="email" placeholder="Email"/>
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Password"/>
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Confirm Password"/>
+      </div>
+      <div class="u-form-group">
+        <button>Sign Up</button>
+      </div>
+    </form> -->
+  </div>
+
+<!-- 
+<%#= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <form class="email-login">
+        <div class="u-form-group">
+          <input type="email" placeholder="Email"/>
+           <%#= f.label :email, {class: 'email'},{placeholder: 'Email'}  %>
+        </div>
+        <div class="u-form-group">
+          <input type="password" placeholder="Password"/>
+        </div>
+        <div class="u-form-group">
+          <button>Log in</button>
+        </div>
+        <div class="u-form-group">
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+      </form> -->
+
+  
+<!-- <h2>Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %> -->

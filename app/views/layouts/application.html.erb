@@ -50,7 +50,7 @@
 				<ul class="menu5">
 					<li><% if user_signed_in? %>
 						<%= link_to destroy_user_session_path, method: :delete do %>
-						<i class="fa fa-sign-out fa-lg" aria-hidden="true">Logout</i>
+						<i class="fa fa-sign-out fa-lg"aria-hidden="true">Logout</i>
 						<% end %>
 						<% else%>
 						<%= link_to user_omniauth_authorize_path(:twitter) do %><i class="fa fa-twitter fa-lg" aria-hidden="true">twitter_in</i>
@@ -94,7 +94,7 @@
 			</div>
 			<div class ="sub-menu">
 				<div class="search">
-				<h2>Search field</h2>			
+				<i class="fa fa-search fa-2x" aria-hidden="true">Search</i>
 					<%= search_form_for @q do |f| %>
 
 						<%= f.search_field :title_or_body_cont,:size => 35, :class => "search_field" %>
@@ -113,9 +113,8 @@
 	</main>
 
 	<footer>
-	<td>このサイトについて<a href="https://github.com/lat-pull-down/TeamLPD">
-			
-			<%= image_tag("gitimage.png", :size => "25x25") %>
+	<td>このサイトについて<a href="https://github.com/lat-pull-down/TeamLPD" style="color:white;">
+			<i class="fa fa-github fa-lg" aria-hidden="true"></i>
 
 				</a></td> | <td>Copyright (C) melodic.inc 2016</td>
 

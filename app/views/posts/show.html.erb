@@ -2,16 +2,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>テーマ:</strong>
+  <strong></strong>
   <%= @post.title %>
 </p>
 <p>
-  <strong>内容:</strong>
+  <strong></strong>
   <%= @post.body %>
 </p>
 <p>
-  <strong>コメント</strong>
-  
   <%if %>
   <%= @comment.body %>
   <%= @comment.user_id %>
@@ -20,7 +18,7 @@
 
   <!-- コメント一覧 -->
   <% @post.comments.each do |comment| %>
-    <div>
+    <div class="commentcss">
     	<%= comment.body %>
       <p><%= link_to 'Delete', destroy_comment_path(comment), method: :delete %></p>
     </div>
@@ -35,6 +33,10 @@
 	    <%= f.submit %>
 
 	  </div>
+
+
+
+    
   <% end %>
 
 

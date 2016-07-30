@@ -18,3 +18,9 @@ fa-iconの使い方
 <!-- アイコンとテキストの挿入 -->
 <%= fa_icon "twitter", text: "Twitter" %>
 <i class="fa fa-twitter fa-4x">Twitter</i>
+
+
+
+<a href="<%= user_omniauth_authorize_path(:twitter) %>">Twitter Login</a>
+<a href="<%= user_omniauth_authorize_path(:facebook) %>">Facebook Login</a>
+<%# a hrefでこにように書くことで、rails で リンクタグの作成をすることができるよ。%>

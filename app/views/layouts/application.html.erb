@@ -12,22 +12,36 @@
 	<header>
 		<div class="menu">
 				<ul class="menu1">
-					<li><%= link_to '新規投稿', new_post_path %></li>
+				<li>
+					<%= link_to new_post_path do%><i class="fa fa-newspaper-o fa-lg" aria-hidden="true">New post</i>
+					<% end %>
+				</li>
 				</ul>
 				<ul class="menu2">
-					<li><%= link_to 'Home', posts_path %></li>
+				<li>
+					<%= link_to posts_path do%>
+					<i class="fa fa-home fa-lg" aria-hidden="true">Home</i>
+					<% end %>
+				</li>
 				</ul>
 				<ul class="menu3">
 					<li><% if user_signed_in? %>
-						<%= link_to 'Mypage',users_show_path(current_user)%>
+						<%= link_to users_show_path(current_user) do %>
+						<i class="fa fa-font-awesome fa-lg"	 aria-hidden="true">Mypage</i>
+						<% end %>
 						<% else %>
-						<%= link_to "Signup", new_user_registration_path %>
+						<%= link_to new_user_registration_path do%>
+						<i class="fa fa-sign-in fa-lg" aria-hidden="true">Signup</i>
+
+						<% end %>
 						<% end %>
 					</li>
 				</ul>
 				<ul class="menu4">
 					<li><% if user_signed_in? %>
-						<%= link_to 'Edit profile', edit_user_registration_path %>
+						<%= link_to edit_user_registration_path do %>
+						<i class="fa fa-user-md fa-lg" aria-hidden="true">Edit profile</i>
+						<% end %>
 						<% else %>
 						<%= %>
 						<% end %>
@@ -35,9 +49,12 @@
 				</ul>
 				<ul class="menu5">
 					<li><% if user_signed_in? %>
-						<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+						<%= link_to destroy_user_session_path, method: :delete do %>
+						<i class="fa fa-sign-out fa-lg" aria-hidden="true">Logout</i>
+						<% end %>
 						<% else%>
-						<%= link_to "twitter_in", user_omniauth_authorize_path(:twitter)%>
+						<%= link_to user_omniauth_authorize_path(:twitter) do %><i class="fa fa-twitter fa-lg" aria-hidden="true">twitter_in</i>
+						<% end %>
  						<%#= link_to "Login", new_user_session_path %>
 						<% end %>	
 						</li>
@@ -101,6 +118,12 @@
 			<%= image_tag("gitimage.png", :size => "25x25") %>
 
 				</a></td> | <td>Copyright (C) melodic.inc 2016</td>
+
+
+<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+ <!--  <div class='icon social fb'><i class='fa fa-facebook'></i></div>
+  <div class='icon social tw'><i class='fa fa-twitter'></i></div>
+  <div class='icon social in'><i class='fa fa-linkedin'></i></div> -->
 	</footer>
   </body>
 </html>

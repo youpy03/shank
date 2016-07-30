@@ -60,11 +60,11 @@ gem 'acts-as-taggable-on'
 
 gem "font-awesome-rails"
 #font-awesomeの実装/アイコン(矢印等)
+#入れることで省略してかける。
 
 gem 'pry-rails'
 #binding.pry
 #rails で"binding.pry"でブレークポイントを置くことができる/便利機能が沢山あるらしい
-
 
 
 group :development, :test do

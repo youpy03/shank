@@ -42,6 +42,7 @@ gem 'rmagick'
 gem 'kaminari'
 #長い文章を複数のページに分割し、各ページへのリンクを並べて
 #アクセスしやすくする機能をページネーション機能
+gem 'kaminari-bootstrap'
 
 gem 'jquery-turbolinks'
 #jquery 用のやつを入れてみようとしたが入らなかった

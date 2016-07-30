@@ -1,26 +1,50 @@
-<h1>ユーザー情報[マイページ]</h1>
-<p>Users#show</p>
-<p>user.detailからの外部情報をここに記入する</p>
 
+<div class="wrap">
+	<div class="right-menu">
+		<a  class="active" href="#profile"><i class="fa fa-user"></i><span>Profile</span></a>
+		<a href="#project"><i class="fa fa-photo"></i><span>Posts</span></a>
+		<a  href="#skills"><i class="fa fa-folder"></i><span>favorite</span></a>
+	</div>
+<div class="content">
+<div class="profile open animated zoomIn">
+	<div class="avatar">
+		<%= image_tag("yoichiro.png") %>
+		<div class="bubble">
+		<h3>Yoichiro Deguchi</h3>
+		<a href="#">yoichiro.deguchi03@gmail.com</a>
+		<h2>Let's play Pokemon GO :)</h2>
+		</div>
 	
+	</div>
+</div>	
+<div class="project animated zoomIn">
+	 	<div class="avatar">
+		 
+		<div class="bubble">
+		<h3>Coming Soon</h3>
+		<a href="#">View Details </a>
+		
+		</div>
+	
+	</div>
+</div>
 
-<!-- ヘルパーメソッド
-
-font-awesome-railsでは、アイコンタグを挿入するヘルパーメソッドが提供されます。iタグを使わずにアイコンを挿入できます。
-提供されるメソッドは「fa_icon, fa_stacked_icon」の2種類です。
-fa-iconの使い方
- -->	
-<!-- アイコンの挿入 -->
-<%= fa_icon "arrow-left"%>
-<i class="fa fa-twitter fa-4x"></i>
-<br>
-<br>
-<!-- アイコンとテキストの挿入 -->
-<%= fa_icon "twitter", text: "Twitter" %>
-<i class="fa fa-twitter fa-4x">Twitter</i>
-
-
-
-<a href="<%= user_omniauth_authorize_path(:twitter) %>">Twitter Login</a>
-<a href="<%= user_omniauth_authorize_path(:facebook) %>">Facebook Login</a>
-<%# a hrefでこにように書くことで、rails で リンクタグの作成をすることができるよ。%>
+<div class="skills animated zoomIn">
+	<div class="avatar">
+		 
+		<div class="bubble">
+		<h3>Coming Soon</h3>
+		<a href="#">View Details </a>
+		
+		</div>
+	
+	</div>
+</div>
+</div><!--End Content-->
+ <div class="footer">
+ <a href="http://www.arjunamgain.com.np/" target="_blank"><i class="fa fa-link"></i><span>Website</span></a>
+		<a href="http://codepen.io/arjunamgain/"  target="_blank"><i class="fa fa-facebook fa-facebook-color"></i><span>facebook</span></a>
+		<a href="https://twitter.com/arjunamgain"  target="_blank"><i class="fa fa-twitter fa-twitter-color"></i><span>Follow</span></a>
+		<a href="mailto:mr.arjunamgain@gmail.com"  target="_blank"><i class="fa fa-briefcase"></i><span>Hire me</span></a>
+ </div>
+ </div>

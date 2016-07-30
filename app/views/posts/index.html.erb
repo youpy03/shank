@@ -32,12 +32,12 @@
     <p class = "like">
     <% if post.liked_by? current_user %>
               <%= link_to post_likes_path(post), method: :delete do %>
-              <i class="fa fa-thumbs-up fa-lg" aria-hidden="true">Delete</i>
+              <i class="fa fa-thumbs-up fa-lg fa-red" aria-hidden="true">Delete</i>
               <% end %>
             <% else %>
 
               <%= link_to post_likes_path(post), method: :post do %>
-              <i class="fa fa-thumbs-up fa-2x" aria-hidden="true">Like</i>
+              <i class="fa fa-thumbs-up fa-2x fa-blue" aria-hidden="true">Like</i>
               <% end %>
             <% end %></p>
   </a>
